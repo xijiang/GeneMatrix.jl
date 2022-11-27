@@ -26,7 +26,7 @@ function mkhdr(nrow::Int64, ncol::Int64;
                trans = 'N',
                type = Int8,
                )
-    mattp ∈ "SUL" && nrow ≠ ncol && error("Non square matrix as SUL")
+    mattp ∈ "SUL" && nrow ≠ ncol && error("Matrix not square")
     code = findfirst(x -> x == type, vldtype)
     return xyheader('X', 'Y', ' ', mattp, trans, code, '\n', nrow, ncol)
 end

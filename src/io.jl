@@ -40,14 +40,17 @@ function readxy(file)
     return mat
 end
 
+"""
+    function writexy(file, mat; mattp = 'F', trans = 'N')
+Write a matrix `mat` into `file`, with specified saving type.  Note a
+symmetric matrix is written of its lower triangle.
+"""
 function writexy(file, mat; mattp = 'F', trans = 'N')
     mattp ∈ "FLUS" || error("Matrix type $mattp not defined")
     trans ∈ "NT" || error("ID locus type $trans not defined")
     et = eltype(mat)
     issymmetric(mat) && (mattp = 'S') # force write half of a symm. mat.
     nrow, ncol = size(mat)
-    (mattp == 'L' || mattp == 'U') &&
-        nrow ≠ ncol && error("Matrix not square")
     
     hdr = mkhdr(nrow, ncol, mattp = mattp, trans = trans, type = et)
     open(file, "w") do io
@@ -65,7 +68,25 @@ function writexy(file, mat; mattp = 'F', trans = 'N')
         end
     end
 end
-                
+
+"""
+    function xyappend(ma::AbstractString, mb::AbstractString)
+Append genotypes in `mb` to file `ma`.  This is only valid if the
+matrix type is `F`, and two matrices have same number of ID, or same
+number of loci.
+"""
+function xyappend(ma::AbstractString, mb::AbstractString)
+    @info "Under developing"
+end
+
+"""
+    function xyappend(file::AbstractString, mat::Matrix; mattp='N')
+Append genotypes in `mat` to `file`.
+"""
+function xyappend(file::AbstractString, mat::Matrix; mattp='N')
+    @info "Under developing"
+end
+
 """
     function readbed(bed, nid)
 Read genotypes in file `bed` of `nid` samples and return a 2-bit matrix.
