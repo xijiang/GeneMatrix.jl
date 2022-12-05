@@ -70,24 +70,6 @@ function writexy(file, mat; mattp = 'F', trans = 'N')
 end
 
 """
-    function xyappend(ma::AbstractString, mb::AbstractString)
-Append genotypes in `mb` to file `ma`.  This is only valid if the
-matrix type is `F`, and two matrices have same number of ID, or same
-number of loci.
-"""
-function xyappend(ma::AbstractString, mb::AbstractString)
-    @info "Under developing"
-end
-
-"""
-    function xyappend(file::AbstractString, mat::Matrix; mattp='N')
-Append genotypes in `mat` to `file`.
-"""
-function xyappend(file::AbstractString, mat::Matrix; mattp='N')
-    @info "Under developing"
-end
-
-"""
     function readbed(bed, nid)
 Read genotypes in file `bed` of `nid` samples and return a 2-bit matrix.
 For reference, the two-bit values and their meaning:

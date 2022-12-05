@@ -43,3 +43,10 @@ plink bed files.
 ## Pedigree
 
 ## Compat genotype storage
+
+## Todo
+
+- [ ] `xyappend` functions
+- [ ] `nrm`: numerical relationship matrix
+- [ ] `nrminv`: the inverse of nrm
+- [ ] `sortped`, recode pedigree to 1:nID.
