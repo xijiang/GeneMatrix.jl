@@ -12,7 +12,6 @@ function readxy(file)
     mat = nothing               # to return if success
     open(file, "r") do io
         mt, id, et, nrow, ncol = readhdr(io)
-        @info id
         if et == Bool           # eltype
             mat = BitArray(undef, nrow, ncol)
             read!(io, mat)
@@ -114,5 +113,6 @@ function writebed(bed, mat)
     end
 end
 
-function bed2bytes(bed)
+function bed2int8(bed)
 end
+

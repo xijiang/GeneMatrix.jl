@@ -3,7 +3,7 @@
 
 Append genotypes in `mat` to `file`.
 """
-function xyappend(file::AbstractString, mat::Matrix; trans='N')
+function xyappend(file::AbstractString, mat::AbstractMatrix; trans='N')
     isfile(file) || error("File $file doesn't exist")
     open(file, "r+") do io
         mt, _, et, nrow, ncol = readhdr(io)
@@ -21,7 +21,7 @@ function xyappend(file::AbstractString, mat::Matrix; trans='N')
             write(io, mat')
         end
 
-        seek(io, 15)
+        seek(io, 16)
         write(io, [ncol + ncl2])
     end
 end

@@ -1,7 +1,7 @@
 name = "GeneMatrix"
 uuid = "b017c6bb-e7c7-4437-8ee6-a27b72ea26ab"
 authors = ["Xijiang Yu <xijiang@users.noreply.github.com> and contributors"]
-version = "0.1.3"
+version = "0.1.4"
 
 [deps]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
