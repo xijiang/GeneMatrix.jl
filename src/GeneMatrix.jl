@@ -15,6 +15,7 @@ include("nrm.jl")               # numerical relationship matrix
 include("grm.jl")               # genomic relationship matrix
 include("graph.jl")        # store huge genomic data with graph theory
 include("pedigree.jl")          # pedigree related operations
+include("kinship.jl")
 
-export readxy, writexy, readbed, writebed
+export readxy, writexy, readbed, writebed, xyappend
 end

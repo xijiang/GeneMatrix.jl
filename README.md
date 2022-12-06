@@ -48,7 +48,6 @@ plink bed files.
 
 - `nrm`: numerical relationship matrix
 - `nrminv`: the inverse of nrm
-- `sortped`, recode pedigree to 1:nID.
+- `codeped`, recode pedigree to 1:nID.
 - `readmacs`, read simulation results from MaCS.
 - `bed2int8`, convert bed file formats to Int8
-- tests merging.

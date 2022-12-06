@@ -1,5 +1,5 @@
 using GeneMatrix
-using Test
+using Test, CSV, DataFrames
 
 @testset "I/O" begin
     file = tempname()
@@ -33,4 +33,11 @@ using Test
     
     rm(file)
     rm(f2)
+end
+
+@testset "A matrix" begin
+    df = CSV.read("../dat/lw-139.ped", DataFrame, header=7, delim='&', stripwhitespace=true)
+    @test length(union(df.ID, df.Sire, df.Dam)) == 12
+    ped = GeneMatrix.codeped(df.ID, df.Sire, df.Dam)
+    @test GeneMatrix.kinship(ped, 11, 11) == 1.140625
 end

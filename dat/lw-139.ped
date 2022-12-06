@@ -1,0 +1,18 @@
+# From Lynch & Walsh, 1996, pp139
+# The fields are separated with &, as ',' is in one name
+# To read -->
+# using CSV, DataFrames
+# df = CSV.read("lw139.ped", DataFrame, header=7, delim='&', stripwhitespace=true)
+# <--
+ID & Sire & Dam
+Lord Raglan & 0 & 0
+Mistletoe & Lord Raglan & 0
+Champion of England & 0 & 0
+Duchess of Gloster, 9th & Lord Raglan & 0
+The Czar & Lord Raglan & 0
+Mimulus & Champion of England & Mistletoe
+Grand Duke of Gloster & Champion of England & Duchess of Gloster, 9th
+Carmine & The Czar & 0
+Royal Duke of Gloster & Grand Duke of Gloster & Mimulus
+Princess Royal & Champion of England & Carmine
+Roan Gauntlet & Royal Duke of Gloster & Princess Royal
