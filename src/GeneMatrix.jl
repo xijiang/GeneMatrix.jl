@@ -1,6 +1,11 @@
 module GeneMatrix
 
-using LinearAlgebra, DataFrames, Mmap, SparseArrays
+using DataFrames
+using Distributions
+using LinearAlgebra
+using Mmap
+using Random
+using SparseArrays
 
 abstract type TwoBM end
 # 1:14. New type must be appened in the end to keep the package consistant.
@@ -16,6 +21,9 @@ include("grm.jl")               # genomic relationship matrix
 include("graph.jl")        # store huge genomic data with graph theory
 include("pedigree.jl")          # pedigree related operations
 include("kinship.jl")
+include("sim.jl")
+include("mate.jl")
+include("dict.jl")
 
-export readxy, writexy, readbed, writebed, xyappend
+export readxy, writexy, readbed, writebed, xyappend, kinship
 end

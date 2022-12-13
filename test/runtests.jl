@@ -35,6 +35,13 @@ using Test, CSV, DataFrames
     rm(f2)
 end
 
+@testset "Conversions" begin
+    mat = rand(Int8.([0, 1, 1, 2]), 15, 15)
+    bat = GeneMatrix.char2bit(mat)
+    fat = GeneMatrix.bit2float(bat, 15)
+    @test mat == fat
+end
+
 @testset "A matrix" begin
     df = CSV.read("../dat/lw-139.ped", DataFrame, header=7, delim='&', stripwhitespace=true)
     @test length(union(df.ID, df.Sire, df.Dam)) == 12

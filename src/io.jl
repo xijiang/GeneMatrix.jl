@@ -113,6 +113,5 @@ function writebed(bed, mat)
     end
 end
 
-function bed2int8(bed)
+function readmacs(dir)
 end
-
