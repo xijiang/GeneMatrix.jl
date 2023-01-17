@@ -19,6 +19,15 @@ struct xyheader
 end
 
 """
+For two ID pairs in a pedigree.
+Using `Int32` should be enough for a pedigree.
+"""
+struct iPair
+    i::Int32
+    j::Int32
+end
+
+"""
     function mkhdr(nrow::Int64, ncol::Int64; mattp = 'F', trans = 'N', type = Int8)
 Make a header for storage of a matrix in `XY` format.
 """

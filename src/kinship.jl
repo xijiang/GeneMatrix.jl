@@ -16,7 +16,6 @@ function kinship(ped, i, j)
     return .5(kinship(ped, j, ipa) + kinship(ped, j, ima))
 end
 
-#=
 """
     function kinship(ped, i::Int, j::Int, dic::Dict{Tuple{Int, Int}, Float64})
 Recursive kinship calculation with kinship of ID pair `(i, j)`
@@ -25,7 +24,7 @@ The memory usage may be bigger than Meuwissen and Luo 1992, or Quaas 1995.
 The speed is however standable.
 The recursive algorithm is also easy to understand.
 """
-function kinship(ped, i::Int, j::Int, dic::Dict{Tuple{Int, Int}, Float64})
+function kinship(ped, i::Int, j::Int, dic::Dict{iPair, Float64})
     (i == 0 || j == 0) && return 0
     ip, im = ped[i, :]
     if i == j
@@ -41,6 +40,7 @@ function kinship(ped, i::Int, j::Int, dic::Dict{Tuple{Int, Int}, Float64})
     return .5(kinship(ped, j, ip, dic) + kinship(ped, j, im, dic))
 end
 
+#=
 """
     function ped_F(ped; force = false, mdc = 1_000_000)
 - When column `:F` is not in DataFrame `ped`, this function calculate

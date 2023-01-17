@@ -20,7 +20,7 @@ function codeped(id, pa, ma)
     om = setdiff(setdiff(ma, id), ["0"])
     isempty(intersect(op, om)) || error("ID is/are both sire and dam")
 
-    df = DataFrame(sire = Int[], dam = Int[], name = AbstractString[])
+    df = DataFrame(sire = Int32[], dam = Int32[], name = AbstractString[])
     dc = Dict{AbstractString, Int}()
     dc["0"] = uid = 0
 

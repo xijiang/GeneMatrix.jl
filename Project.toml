@@ -1,7 +1,7 @@
 name = "GeneMatrix"
 uuid = "b017c6bb-e7c7-4437-8ee6-a27b72ea26ab"
 authors = ["Xijiang Yu <xijiang@users.noreply.github.com> and contributors"]
-version = "0.1.6"
+version = "0.1.7"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"

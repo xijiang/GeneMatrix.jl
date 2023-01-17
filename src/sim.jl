@@ -92,3 +92,21 @@ function simPtQTL(gt, nqtl; d = MvNormal(zeros(2), I(2)))
     efct = rand(d, nqtl)
     return (locus = loci, e1 = efct[1, :], e2 = efct[2, :])
 end
+
+"""
+    simMap(len, nlc...; cM = 1_000_000)
+
+Simulate a linkage map DataFrame with chromosome number of ``UInt8`` and 
+base pair positions of ``UInt32``.
+This can be used for crossover simulations.
+"""
+function simMap(len, nlc...; cM = 1_000_000)
+    lmp = DataFrame(chr = UInt8[], pos = UInt32[])
+    ich = UInt8(1)
+    for n in nlc
+        pos = sort(rand(1:len, n))
+        append!(lmp, DataFrame(chr=repeat([ich], length(pos)), pos = pos))
+        ich += 1
+    end
+    lmp
+end
